@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import states from "../assets/components/state";
 
 function Index() {
+  const [stateList] = useState(states);
+
   return (
     <>
       <div className="title">
@@ -32,7 +35,13 @@ function Index() {
             <input id="city" type="text" />
 
             <label htmlFor="state">State</label>
-            <select name="state" id="state"></select>
+            <select name="state" id="state">
+              {stateList.map((state) => (
+                <option key={state.abbreviation} value={state.abbreviation}>
+                  {state.name}
+                </option>
+              ))}
+            </select>
 
             <label htmlFor="zip-code">Zip Code</label>
             <input id="zip-code" type="number" />

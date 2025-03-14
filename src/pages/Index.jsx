@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import states from "../assets/components/state";
+import SaveEmployees from "../assets/components/saveEmployees";
 
 function Index() {
   const [stateList] = useState(states);
@@ -57,10 +58,7 @@ function Index() {
           </select>
         </form>
 
-        <button>Save</button>
-      </div>
-      <div id="confirmation" className="modal">
-        Employee Created!
+        <SaveEmployees />
       </div>
     </>
   );

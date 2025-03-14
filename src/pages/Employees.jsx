@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import DataTable from 'react-data-table-component';
+import Columns from '../components/Columns';
 
 function Employees() {
   const [employees, setEmployees] = useState([]);
@@ -11,25 +11,31 @@ function Employees() {
     }
   }, []);
 
-  const columns = [
-    { name: "First Name", selector: row => row.firstName },
-    { name: "Last Name", selector: row => row.lastName },
-    { name: "Start Date", selector: row => row.startDate },
-    { name: "Department", selector: row => row.department },
-    { name: "Date of Birth", selector: row => row.dateOfBirth },
-    { name: "Street", selector: row => row.street },
-    { name: "City", selector: row => row.city },
-    { name: "State", selector: row => row.state },
-    { name: "Zip Code", selector: row => row.zipCode },
-  ];
-
   return (
     <div id="employee-div" className="container">
       <h1>Current Employees</h1>
-      <DataTable
-        columns={columns}
-        data={employees}
-      />
+      {employees.length > 0 ? (
+        <table className="employeeTable">
+          <thead className="employeeTableHead">
+            <tr className="employeeTableRow">
+              {Columns.map((column, index) => (
+                <th key={index} className="employeeTableHeader">{column.name}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="employeeTableBody">
+            {employees.map((employee, index) => (
+              <tr key={index} className="employeeTableRow">
+                {Columns.map((column, colIndex) => (
+                  <td key={colIndex} className="employeeTableCell">{column.selector(employee)}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <p>No employees found.</p>
+      )}
       <a href="/">Home</a>
     </div>
   );

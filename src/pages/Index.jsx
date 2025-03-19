@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import states from "../assets/components/state";
 import SaveEmployees from "../assets/components/saveEmployees";
+import DatePicker from "../assets/components/datePicker";
+import "@oliflox/date-picker/src/datepicker.css";
 
 function Index() {
   const [stateList] = useState(states);
@@ -20,8 +22,10 @@ function Index() {
           <label htmlFor="last-name">Last Name</label>
           <input type="text" id="last-name" />
 
-          <label htmlFor="date-of-birth">Date of Birth</label>
-          <input id="date-of-birth" type="text" />
+          <DatePicker
+            Label={"Date of Birth"}
+            id={"date-of-birth"}
+          />
 
           <label htmlFor="start-date">Start Date</label>
           <input id="start-date" type="text" />

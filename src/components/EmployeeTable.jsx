@@ -3,17 +3,13 @@ import Columns from './EmployeeColumns';
 import EmployeeRow from './EmployeeRow';
 
 function EmployeeTable({ employees }) {
-  const headers = (() => {
-    return Columns.map((column, index) => (
-      <th key={index} className="employeeTableHeader">{column.name}</th>
-    ));
-  }, []);
+  const headers = Columns.map((column, index) => (
+    <th key={index} className="employeeTableHeader">{column.name}</th>
+  ));
 
-  const rows = (() => {
-    return employees.map((employee, index) => (
-      <EmployeeRow key={index} employee={employee} />
-    ));
-  }, [employees]);
+  const rows = employees.map((employee, index) => (
+    <EmployeeRow key={index} employee={employee} />
+  ));
 
   return (
     <table className="employeeTable">

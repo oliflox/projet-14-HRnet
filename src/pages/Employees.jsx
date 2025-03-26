@@ -5,15 +5,13 @@ function Employees() {
   const employees = (() => {
     const storedEmployees = JSON.parse(localStorage.getItem("employees"));
     return storedEmployees || [];
-  }, []);
+  })();
 
-  const employeesContent = (() => {
-    return employees.length > 0 ? (
-      <EmployeeTable employees={employees} />
-    ) : (
-      <p>No employees found.</p>
-    );
-  }, [employees]);
+  const employeesContent = employees.length > 0 ? (
+    <EmployeeTable employees={employees} />
+  ) : (
+    <p>No employees found.</p>
+  );
 
   return (
     <div id="employee-div" className="container">

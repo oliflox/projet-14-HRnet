@@ -32,7 +32,7 @@ label {
     padding: 10px;
     background-color: #028090;
     color: white;
-    
+
 }
 
 .employeeTableCell {
@@ -40,7 +40,7 @@ label {
     padding: 10px;
 }
 
-.employeeTableRow:hover{
+.employeeTableRow:hover {
     background-color: #02809011;
     transition-duration: 0.3s;
 }
@@ -48,9 +48,19 @@ label {
 
 .modalContainer {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    position: relative;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -58,13 +68,9 @@ label {
     z-index: 1000;
 }
 
-.modalContent{
-    position: relative;
-}
-
-.close{
+.close {
     position: absolute;
-    right: 0;
-    top: -25px;
+    right: 15px;
+    top: 10px;
     cursor: pointer;
 }

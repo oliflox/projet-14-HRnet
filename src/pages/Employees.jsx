@@ -1,41 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import Columns from '../components/Columns';
+import React from 'react';
+import EmployeeTable from '../components/EmployeeTable';
 
 function Employees() {
-  const [employees, setEmployees] = useState([]);
-
-  useEffect(() => {
+  const employees = (() => {
     const storedEmployees = JSON.parse(localStorage.getItem("employees"));
-    if (storedEmployees) {
-      setEmployees(storedEmployees);
-    }
+    return storedEmployees || [];
   }, []);
+
+  const employeesContent = (() => {
+    return employees.length > 0 ? (
+      <EmployeeTable employees={employees} />
+    ) : (
+      <p>No employees found.</p>
+    );
+  }, [employees]);
 
   return (
     <div id="employee-div" className="container">
       <h1>Current Employees</h1>
-      {employees.length > 0 ? (
-        <table className="employeeTable">
-          <thead className="employeeTableHead">
-            <tr className="employeeTableRow">
-              {Columns.map((column, index) => (
-                <th key={index} className="employeeTableHeader">{column.name}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody className="employeeTableBody">
-            {employees.map((employee, index) => (
-              <tr key={index} className="employeeTableRow">
-                {Columns.map((column, colIndex) => (
-                  <td key={colIndex} className="employeeTableCell">{column.selector(employee)}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      ) : (
-        <p>No employees found.</p>
-      )}
+      {employeesContent}
       <a href="/">Home</a>
     </div>
   );

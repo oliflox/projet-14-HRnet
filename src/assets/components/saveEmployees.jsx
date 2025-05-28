@@ -45,7 +45,7 @@ function SaveEmployees() {
 
     return (
         <div>
-            <button onClick={saveEmployee}>Save Employee</button>
+            <button className="saveBtn" onClick={saveEmployee}>Save</button>
             <Modal 
                 message="Employee Created!" 
                 isVisible={isModalVisible} 

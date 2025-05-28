@@ -8,57 +8,52 @@ function Index() {
 
   return (
     <>
-      <div className="title">
-        <h1>HRnet</h1>
-      </div>
-      <div className="container">
-        <a href="/employees">View Current Employees</a>
-        <h2>Create Employee</h2>
-        <form action="#" id="create-employee">
-          <label htmlFor="first-name">First Name</label>
-          <input type="text" id="first-name" />
+      <div className="mainTitle">HRnet</div>
+      <a href="/employees" className="mainLink">View Current Employees</a>
+      <div className="mainSubtitle">Create Employee</div>
+      <form action="#" id="create-employee" className="mainForm">
+        <label htmlFor="first-name" className="mainLabel">First Name</label>
+        <input type="text" id="first-name" className="mainInput" />
 
-          <label htmlFor="last-name">Last Name</label>
-          <input type="text" id="last-name" />
+        <label htmlFor="last-name" className="mainLabel">Last Name</label>
+        <input type="text" id="last-name" className="mainInput" />
 
-          <DatePicker Label={"Date of Birth"} id={"date-of-birth"} />
+        <DatePicker Label={"Date of Birth"} id={"date-of-birth"} inputClassName="mainInput" labelClassName="mainLabel" />
 
-          <DatePicker Label={"Start Date"} id={"start-date"} />
+        <DatePicker Label={"Start Date"} id={"start-date"} inputClassName="mainInput" labelClassName="mainLabel" />
 
-          <fieldset className="address">
-            <legend>Address</legend>
+        <fieldset className="mainFieldset">
+          <legend className="mainLegend">Address</legend>
 
-            <label htmlFor="street">Street</label>
-            <input id="street" type="text" />
+          <label htmlFor="street" className="mainLabel">Street</label>
+          <input id="street" type="text" className="mainInput" />
 
-            <label htmlFor="city">City</label>
-            <input id="city" type="text" />
+          <label htmlFor="city" className="mainLabel">City</label>
+          <input id="city" type="text" className="mainInput" />
 
-            <label htmlFor="state">State</label>
-            <select name="state" id="state">
-              {stateList.map((state) => (
-                <option key={state.abbreviation} value={state.abbreviation}>
-                  {state.name}
-                </option>
-              ))}
-            </select>
-
-            <label htmlFor="zip-code">Zip Code</label>
-            <input id="zip-code" type="number" />
-          </fieldset>
-
-          <label htmlFor="department">Department</label>
-          <select name="department" id="department">
-            <option>Sales</option>
-            <option>Marketing</option>
-            <option>Engineering</option>
-            <option>Human Resources</option>
-            <option>Legal</option>
+          <label htmlFor="state" className="mainLabel">State</label>
+          <select name="state" id="state" className="mainSelect">
+            {stateList.map((state) => (
+              <option key={state.abbreviation} value={state.abbreviation}>
+                {state.name}
+              </option>
+            ))}
           </select>
-        </form>
 
+          <label htmlFor="zip-code" className="mainLabel">Zip Code</label>
+          <input id="zip-code" type="number" className="mainInput" />
+        </fieldset>
+
+        <label htmlFor="department" className="mainLabel">Department</label>
+        <select name="department" id="department" className="mainSelect">
+          <option>Sales</option>
+          <option>Marketing</option>
+          <option>Engineering</option>
+          <option>Human Resources</option>
+          <option>Legal</option>
+        </select>
         <SaveEmployees />
-      </div>
+      </form>
     </>
   );
 }

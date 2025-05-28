@@ -93,9 +93,8 @@ function Employees() {
                   <span
                     style={{
                       marginLeft: 3,
-                      color: isActive ? '#7c3aed' : '#bbb',
+                      color: isActive ? '#028090' : '#bbb',
                       fontWeight: isActive ? 'bold' : 'normal',
-                      fontSize: '0.95em',
                       userSelect: 'none',
                     }}
                   >

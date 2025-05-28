@@ -10,9 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@oliflox/date-picker": "^1.3.0",
+    "@oliflox/date-picker": "^1.3.2",
     "react": "^19.0.0",
-    "react-data-table-component": "^7.7.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.3.0"
   },

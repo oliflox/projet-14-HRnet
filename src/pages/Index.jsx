@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import states from "../assets/components/state";
 import SaveEmployees from "../assets/components/saveEmployees";
 import DatePicker from "@oliflox/date-picker";
-import "@oliflox/date-picker/src/datepicker.css";
 
 function Index() {
   const [stateList] = useState(states);

@@ -1,0 +1,64 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.calendarInputContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.calendarInput:active,
+.calendarInput:focus {
+  outline: none;
+}
+
+
+.calendarContainer {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  background-color: white;
+}
+
+.calendarHeader {
+  padding-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendarWeekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+  padding-bottom: 8px;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendarDay {
+  border: none;
+  background-color: transparent;
+  padding: 6px;
+}
+
+.calendarButton {
+  background-color: #028090;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.calendarButton:hover {
+  background-color: #05668D;
+}

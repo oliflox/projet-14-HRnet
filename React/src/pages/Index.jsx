@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
-import states from "../assets/components/state";
-import SaveEmployees from "../assets/components/saveEmployees";
+import states from "../utils/state";
+import SaveEmployees from "../components/saveEmployees";
 import DatePicker from "@oliflox/date-picker";
 
 function Index() {

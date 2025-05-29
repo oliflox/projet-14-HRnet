@@ -14,6 +14,12 @@ const CalendarDays = ({ currentMonth, handleDateClick }) => {
   const startDay = startOfMonth.getDay();
   const daysInMonth = endOfMonth.getDate();
 
+  const today = new Date();
+  const isToday = (date) =>
+    date.getDate() === today.getDate() &&
+    date.getMonth() === today.getMonth() &&
+    date.getFullYear() === today.getFullYear();
+
   const daysArray = [];
 
   for (let i = 0; i < startDay; i++) {
@@ -26,10 +32,12 @@ const CalendarDays = ({ currentMonth, handleDateClick }) => {
       currentMonth.getMonth(),
       i
     );
+    const classNames = ["calendarDay"];
+    if (isToday(date)) classNames.push("today");
     daysArray.push(
       <button
         key={i}
-        className="calendarDay"
+        className={classNames.join(" ")}
         onClick={() => handleDateClick(date)}
       >
         {i}

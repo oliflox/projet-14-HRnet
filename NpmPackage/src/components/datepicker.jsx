@@ -35,6 +35,8 @@ const DatePicker = ({ Label, id, onChange }) => {
   const handleYearChange = (event) =>
     updateMonthOrYear("year", parseInt(event.target.value, 10));
 
+  const handleToday = () => setCurrentMonth(new Date());
+
   const handleClickOutside = useCallback(
     (event) => {
       if (calendarRef.current && !calendarRef.current.contains(event.target)) {
@@ -78,6 +80,7 @@ const DatePicker = ({ Label, id, onChange }) => {
               handleNextMonth={handleNextMonth}
               handleMonthChange={handleMonthChange}
               handleYearChange={handleYearChange}
+              handleToday={handleToday}
             />
             <CalendarDays
               currentMonth={currentMonth}

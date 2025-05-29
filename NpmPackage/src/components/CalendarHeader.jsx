@@ -1,4 +1,5 @@
 import React from "react";
+import { MdHome } from "react-icons/md";
 
 const CalendarHeader = ({
   currentMonth,
@@ -6,6 +7,7 @@ const CalendarHeader = ({
   handleNextMonth,
   handleMonthChange,
   handleYearChange,
+  handleToday,
 }) => {
   const monthOptions = Array.from({ length: 12 }, (_, index) => (
     <option key={index} value={index}>
@@ -27,15 +29,18 @@ const CalendarHeader = ({
       <button className="calendarButton prev-button" onClick={handlePrevMonth}>
         {"<"}
       </button>
+      <button className="calendarButton home-button" onClick={handleToday} title="Aujourd'hui">
+        <MdHome size={17} color="white" />
+      </button>
       <select
-        className="monthDropdown"
+        className="Dropdown monthDropdown"
         value={currentMonth.getMonth()}
         onChange={handleMonthChange}
       >
         {monthOptions}
       </select>
       <select
-        className="yearDropdown"
+        className="Dropdown yearDropdown"
         value={currentMonth.getFullYear()}
         onChange={handleYearChange}
       >

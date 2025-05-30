@@ -13,7 +13,7 @@ function EmployeeTable({ employees, onSort, sortColumn, sortDirection }) {
       tabIndex={0}
       style={{ cursor: 'pointer' }}
     >
-      <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
         {column.name}
         <span 
           className="sort-icon" 

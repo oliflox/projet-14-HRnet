@@ -1,12 +1,10 @@
-import React, { useMemo } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { useEmployeeTable } from '../hooks/useEmployeeTable';
 import EmployeeTable from '../components/EmployeeTable';
 
 function Employees() {
-  const employees = useMemo(() => {
-    const storedEmployees = JSON.parse(localStorage.getItem("employees"));
-    return storedEmployees || [];
-  }, []);
+  const employees = useSelector(state => state.employees.employees);
 
   const {
     employees: paginatedEmployees,
@@ -59,12 +57,10 @@ function Employees() {
         sortDirection={sortDirection}
       />
 
-      
-
       <div className="employeePagination">
-      <div className="employeeTableInfo">
-        Showing {totalRows === 0 ? 0 : (rowsPerPage * (currentPage-1) + 1)} to {Math.min(rowsPerPage * currentPage, totalRows)} of {totalRows} entries
-      </div>
+        <div className="employeeTableInfo">
+          Showing {totalRows === 0 ? 0 : (rowsPerPage * (currentPage-1) + 1)} to {Math.min(rowsPerPage * currentPage, totalRows)} of {totalRows} entries
+        </div>
         <div className="paginationControls">
           <button 
             className="employeePaginationBtn" 

@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addEmployee } from '../store/employeeSlice';
 import Modal from './Modal';
 
 function SaveEmployees({ refs }) {
     const [isModalVisible, setModalVisible] = useState(false);
     const [error, setError] = useState(null);
+    const dispatch = useDispatch();
 
     const validateForm = () => {
         const formData = {
@@ -26,15 +29,7 @@ function SaveEmployees({ refs }) {
             setError(null);
             const formData = validateForm();
             
-            const employees = JSON.parse(localStorage.getItem('employees')) || [];
-            const employee = {
-                id: Date.now(),
-                ...formData,
-                createdAt: new Date().toISOString()
-            };
-
-            employees.push(employee);
-            localStorage.setItem('employees', JSON.stringify(employees));
+            dispatch(addEmployee(formData));
             setModalVisible(true);
 
             // Réinitialiser le formulaire

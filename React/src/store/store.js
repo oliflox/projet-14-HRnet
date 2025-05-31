@@ -6,7 +6,7 @@ import employeeReducer from './employeeSlice';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['employees'] // seulement le reducer employees sera persisté
+  whitelist: ['employees']
 };
 
 const persistedReducer = persistReducer(persistConfig, employeeReducer);

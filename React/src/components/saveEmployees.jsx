@@ -32,7 +32,6 @@ function SaveEmployees({ refs }) {
             dispatch(addEmployee(formData));
             setModalVisible(true);
 
-            // Réinitialiser le formulaire
             Object.values(refs).forEach(ref => {
                 if (ref && ref.current) {
                     ref.current.value = '';

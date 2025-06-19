@@ -1,12 +1,65 @@
-# React + Vite
+# Projet 14 - Migration HRnet de jQuery vers React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 Description du projet
 
-Currently, two official plugins are available:
+Ce projet fait partie du parcours de formation OpenClassroom et consiste à migrer une application web **HRnet** d'une architecture basée sur **jQuery** vers une architecture moderne utilisant **React**. Cette migration permet d'optimiser les performances, d'améliorer la maintenabilité du code et d'adopter les bonnes pratiques de développement web moderne.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Objectifs
 
-## Expanding the ESLint configuration
+- **Migration complète** : Transformer une application jQuery en application React
+- **Optimisation des performances** : Améliorer les temps de chargement et la réactivité
+- **Maintenabilité** : Adopter une architecture modulaire et réutilisable
+- **Création d'un package NPM** : Développer un composant DatePicker personnalisé
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🏗️ Architecture du projet
+
+Le projet est organisé en deux parties principales :
+
+### 1. Application React (`/React`)
+Application principale HRnet migrée vers React avec les fonctionnalités suivantes :
+- **Gestion des employés** : Formulaire de création et liste des employés
+- **Routing** : Navigation entre les pages avec React Router
+- **State Management** : Gestion d'état avec Redux Toolkit
+- **Composants réutilisables** : Architecture modulaire
+
+### 2. Package NPM (`/NpmPackage`)
+Composant DatePicker personnalisé publié sur NPM :
+- **@oliflox/date-picker** : Composant de sélection de date réutilisable
+- **Publication publique** : Disponible pour d'autres développeurs
+
+## 🚀 Technologies utilisées
+
+### Frontend
+- **React 19** : Framework principal
+- **Vite** : Outil de build et développement
+- **React Router DOM** : Navigation entre les pages
+- **Redux Toolkit** : Gestion d'état globale
+- **Redux Persist** : Persistance des données
+
+## 📈 Avantages de la migration
+
+### Performance
+- **Chargement plus rapide** : Optimisations de Vite
+- **Rendu optimisé** : Virtual DOM de React
+- **Code splitting** : Chargement à la demande des composants
+
+### Développement
+- **Code modulaire** : Composants réutilisables
+- **Type safety** : Support TypeScript
+- **Hot reload** : Développement plus fluide
+
+### Maintenance
+- **Architecture claire** : Séparation des responsabilités
+- **Tests facilités** : Composants isolés et testables
+- **Évolutivité** : Facile d'ajouter de nouvelles fonctionnalités
+
+## 🤝 Contribution
+
+Ce projet a été développé dans le cadre de la formation OpenClassroom.
+## 📄 Licence
+
+Ce projet est développé dans un contexte éducatif. Le composant DatePicker est publié sous licence ISC.
+
+---
+
+**Développé avec ❤️ pour OpenClassroom** 
